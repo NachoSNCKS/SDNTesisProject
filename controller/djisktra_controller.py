@@ -1,17 +1,4 @@
-# Copyright (C) 2011 Nippon Telegraph and Telephone Corporation.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#    http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-# implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+
 
 from ryu.base import app_manager
 from ryu.controller import mac_to_port
@@ -30,13 +17,13 @@ from ryu.app.wsgi import ControllerBase
 from ryu.topology import event, switches
 from collections import defaultdict
  
-#switches
+#Arreglo de switches
 switches = []
  
-#mymac[srcmac]->(switch, port)
+#Arreglo de MACS[srcmac]->(switch, port)
 mymac={}
 
-#adjacency map [sw1][sw2]->port from sw1 to sw2
+#Mapa de adyancencia [sw1][sw2]->port from sw1 to sw2
 adjacency=defaultdict(lambda:defaultdict(lambda:None))
 
 def minimum_distance(distance, Q):

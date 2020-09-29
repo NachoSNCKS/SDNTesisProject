@@ -1,0 +1,5 @@
+#### LINEAS IMPORTANTE DE EJECUCION
+
+ryu-manager djisktra_controller.py --observe-links
+sudo python topo.py
+sudo ovs-ofctl -O OpenFlow13 dump-flows s1

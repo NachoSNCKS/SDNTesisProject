@@ -26,17 +26,17 @@ class SingleSwitchTopo(Topo):
         # Definicion de los terminales
         h1 = self.addHost('h1', mac="00:00:00:00:00:01", ip="192.168.1.1/24")
         h2 = self.addHost('h2', mac="00:00:00:00:00:02", ip="192.168.1.2/24")
-        h3 = self.addHost('h3', mac="00:00:00:00:00:03", ip="192.168.1.3/24")
-        h4 = self.addHost('h4', mac="00:00:00:00:00:04", ip="192.168.1.4/24")
+        #h3 = self.addHost('h3', mac="00:00:00:00:00:03", ip="192.168.1.3/24")
+        #h4 = self.addHost('h4', mac="00:00:00:00:00:04", ip="192.168.1.4/24")
         
         # Definicion las conexiones
         # Primera linea de conexiones
-        self.addLink(s1,h1,1,1)
-        self.addLink(s1,h2,2,1)
-        self.addLink(s1,s2,3,1)  
-        self.addLink(s1,s3,4,1)
-        self.addLink(s1,s4,5,1)
-
+        #self.addLink(s1,h2,5,1)
+        self.addLink(s1,s2,1,1)  
+        self.addLink(s1,s3,2,1)
+        self.addLink(s1,s4,3,1)
+        self.addLink(s1,h1,4,1)
+            
         # Segunda linea de conexiones
         self.addLink(s2,s5,2,1)
         self.addLink(s3,s6,2,1)
@@ -48,8 +48,8 @@ class SingleSwitchTopo(Topo):
         self.addLink(s8,s10,2,1)
         self.addLink(s9,s10,2,2)
         self.addLink(s6,s10,2,3)
-        self.addLink(h3,s10,2,4)
-        self.addLink(h4,s10,2,5)
+        self.addLink(h2,s10,2,4)
+        #self.addLink(h4,s10,2,5)
 
 if __name__ == '__main__':
     setLogLevel('info')

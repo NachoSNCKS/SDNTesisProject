@@ -3,3 +3,17 @@
 ryu-manager djisktra_controller.py --observe-links
 sudo python topo.py
 sudo ovs-ofctl -O OpenFlow13 dump-flows s1
+
+### LINEAS PARA COMENZAR FLUJO
+
+> iperf -s -u -i 1 # Este comando se ejecuta en el nodo que recibira la data
+
+> iperf -c h2 -u -b 10m # Este comando comienza la transmision de data
+
+
+> iperf -s -u -l 32k -w 128k -i 1
+
+> iperf -c h2 -b 10m -l 32k -w 128k
+
+
+

@@ -1,7 +1,7 @@
 #### LINEAS IMPORTANTE DE EJECUCION
 
 ryu-manager djisktra_controller.py --observe-links
-sudo python topo.py
+sudo python topo.py --link tc, bw=10, delay=10ms
 sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 
 ### LINEAS PARA COMENZAR FLUJO

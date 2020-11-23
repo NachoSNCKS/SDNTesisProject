@@ -1,6 +1,7 @@
 #### LINEAS IMPORTANTE DE EJECUCION
 
 ryu-manager djisktra_controller.py --observe-links
+ryu-manager simple_stp_switch.py --observe-links
 sudo python topo.py --link tc, bw=10, delay=10ms
 sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 
@@ -8,12 +9,27 @@ sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 
 > iperf -s -u -i 1 # Este comando se ejecuta en el nodo que recibira la data
 
-> iperf -c h2 -u -b 10m # Este comando comienza la transmision de data
+> h1 iperf -c h2 -u -b 10m # Este comando comienza la transmision de data
 
 
 > iperf -s -u -l 32k -w 128k -i 1
 
 > iperf -c h2 -b 10m -l 32k -w 128k
+
+
+#### LINEAS IMPORTANTE DE EJECUCION
+
+sudo python topo.py --link tc, bw=10, delay=5ms
+sudo python topo.py --link tc, bw=10, delay=10ms
+sudo python topo.py --link tc, bw=10, delay=20ms
+
+sudo python topo.py --link tc, bw=50, delay=5ms
+sudo python topo.py --link tc, bw=50, delay=10ms
+sudo python topo.py --link tc, bw=50, delay=20ms
+
+sudo python topo.py --link tc, bw=100, delay=5ms
+sudo python topo.py --link tc, bw=100, delay=10ms
+sudo python topo.py --link tc, bw=100, delay=20ms
 
 
 
